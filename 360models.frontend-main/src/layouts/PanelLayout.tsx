@@ -39,7 +39,11 @@ function Content() {
     }, [closeNavbar]);
 
     return (
-        <div className={"relative flex h-screen w-screen select-none"}>
+        <div
+            className={
+                "premium-layout relative flex h-screen w-screen select-none"
+            }
+        >
             <div
                 className={
                     "hidden h-full flex-col bg-gradient-to-b from-red-700 to-red-800 lg:flex lg:w-[200px] xl:w-[320px]"
@@ -145,7 +149,7 @@ function Navbar() {
                     .filter((item) => item.align !== "end")
                     .map((item) => (
                         <li
-                            className={`flex h-14 items-center text-white transition-colors hover:bg-[#00000033] ${item.isActive ? "bg-[#00000033]" : ""}`}
+                            className={`navbar-item flex h-14 items-center text-white transition-colors hover:bg-[#00000033] ${item.isActive ? "bg-[#00000033]" : ""}`}
                             key={item.link}
                             onClick={() => navigate(item.link)}
                         >
@@ -165,7 +169,7 @@ function Navbar() {
                     .filter((item) => item.align === "end")
                     .map((item) => (
                         <li
-                            className={`flex h-14 items-center text-white transition-colors hover:bg-[#00000033] ${item.isActive ? "bg-[#00000033]" : ""}`}
+                            className={`navbar-item flex h-14 items-center text-white transition-colors hover:bg-[#00000033] ${item.isActive ? "bg-[#00000033]" : ""}`}
                             key={item.link}
                             onClick={() => navigate(item.link)}
                         >
