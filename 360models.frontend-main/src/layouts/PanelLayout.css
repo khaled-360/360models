@@ -3,3 +3,19 @@
     -moz-box-shadow: inset 5px 5px 16px -10px rgba(0, 0, 0, 0.75);
     box-shadow: inset 5px 5px 16px -10px rgba(0, 0, 0, 0.75);
 }
+
+.premium-layout {
+    perspective: 1000px;
+}
+
+.navbar-item {
+    transform-style: preserve-3d;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.navbar-item:hover {
+    transform: translateZ(6px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}

@@ -12,8 +12,18 @@ export function Button({
 }: ButtonProps) {
     const variants = useMemo<Variants>(
         () => ({
-            hover: { scale: 1 + scaleIntensity },
-            click: { scale: 1 - scaleIntensity },
+            hover: {
+                scale: 1 + scaleIntensity,
+                rotateX: 2,
+                rotateY: 2,
+                boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+            },
+            click: {
+                scale: 1 - scaleIntensity,
+                rotateX: 0,
+                rotateY: 0,
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+            },
         }),
         [scaleIntensity],
     );
@@ -24,7 +34,8 @@ export function Button({
             whileHover={disabled ? undefined : "hover"}
             whileTap={disabled ? undefined : "click"}
             disabled={disabled}
-            className={`cursor-pointer ${className}`}
+            style={{ transformStyle: "preserve-3d" }}
+            className={`w-full cursor-pointer transition-transform duration-200 sm:w-auto ${className}`}
             {...props}
         >
             {children}
