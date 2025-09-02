@@ -1,0 +1,4 @@
+[submodule "dependencies/@360models.platform/types"]
+	path = dependencies/@360models.platform/types
+	url = git@github.com:360Fabriek/360models.platform.api.types.git
+	branch = main

@@ -1,0 +1,41 @@
+name: Deploy app to staging environment
+
+env:
+  APP_LOCATION: "/" # location of your client code
+  OUTPUT_LOCATION: "dist" # location of client code build output
+  VITE_PLATFORM_API_URL: 'https://360models-backend-a9dnf4fraeebfbbv.westeurope-01.azurewebsites.net'
+  VITE_VIEWER_API_URL: ''
+  VITE_VIEWER_URL: ''
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy to Staging
+    environment: app.prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ssh-known-hosts: "github.com"
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          submodules: true
+      - name: Build dependencies
+        run: "npm ci && cd dependencies/@360models.platform/types && npm run build"
+      - name: Build And Deploy
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_DEPLOY }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: ${{ env.APP_LOCATION }}
+          output_location: ${{ env.OUTPUT_LOCATION }}
+        env:  # specify the environment variables here
+          VITE_PLATFORM_API_URL: ${{ env.VITE_PLATFORM_API_URL }}
+          VITE_VIEWER_API_URL: ${{ env.VITE_VIEWER_API_URL }}
+          VITE_VIEWER_URL: ${{ env.VITE_VIEWER_URL }}

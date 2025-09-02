@@ -1,0 +1,59 @@
+@import url("Fonts.css");
+
+@import "tailwindcss";
+@theme {
+    --breakpoint-xxs: "300px";
+    --breakpoint-4xl: "2560px";
+    --breakpoint-xs: 30rem;
+    --breakpoint-2xl: 100rem;
+    --breakpoint-3xl: 120rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.45rem;
+    height: 0.45rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #00000010;
+    border-radius: 100vmax;
+    -webkit-box-shadow: inset 0px 0px 24px -16px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 0px 24px -16px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 0px 24px -16px rgba(66, 68, 90, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0000002c;
+    border-radius: 100vmax;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff38;
+}
+
+html,
+body {
+    height: 100vh;
+    overflow-y: hidden;
+    color: #101010;
+}
+
+body {
+    background: #eeeeee;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: #fff 1px solid;
+}
+
+.disable-outline,
+.disable-outline:focus {
+    outline: none;
+}

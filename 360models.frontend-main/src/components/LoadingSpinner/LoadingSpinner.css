@@ -1,0 +1,29 @@
+.loader {
+    --loader-color: #ff3d00;
+    --loader-thickness: 2px;
+    position: relative;
+}
+
+.loader > div {
+    position: absolute;
+    inset: 0; /* Top, right, bottom, left set to 0 */
+    border-radius: 50%; /* Creates a circular shape */
+    box-shadow: 0 0 calc(var(--loader-thickness) + 10px) var(--loader-thickness)
+        rgba(0, 0, 0, 0.3) inset;
+}
+
+/* Specific styles for the animated element */
+.loader .rotate {
+    box-shadow: 0 var(--loader-thickness) 0 var(--loader-color) inset;
+    animation: rotate 2s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

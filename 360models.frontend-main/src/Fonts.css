@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Magistral";
+    src: url("/fonts/Magistral Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Magistral";
+    src: url("/fonts/Magistral Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Magistral";
+    src: url("/fonts/Magistral Black.otf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+.text-magistral {
+    font-family: "Magistral", sans-serif;
+}
+
+/*//////////////////////////////////////
+///// ROBOTO //////////////////////////
+/////////////////////////////////////*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+.text-roboto {
+    font-family: "Roboto", sans-serif;
+}

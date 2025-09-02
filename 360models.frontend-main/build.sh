@@ -1,0 +1,1 @@
+tar --exclude-vcs -zcvf deploy.tar ./dist caprover-Dockerfile captain-definition ./build/nginx.conf
